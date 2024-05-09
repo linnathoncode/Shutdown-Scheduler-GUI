@@ -86,3 +86,6 @@ menuFrame.pack(pady= 150)
 
 root.mainloop()
 
+#anani sikeyim
+#git
+
