@@ -80,7 +80,7 @@ minuteLabel = CTkLabel(menuFrame, text="Minute", font=("arial", 20)).grid(row=1,
 submitbtn = CTkButton(menuFrame, text="submit", command=getter,font=("arial", 30))
 submitbtn.grid(row=2, column =1, pady=25, padx=50)
 
-cancelbtn = CTkButton(menuFrame, text="cancel", command=cancel, font=("arial",30),hover_color="red")
+cancelbtn = CTkButton(menuFrame, text="cancel", command=cancel, font=("arial", 30),hover_color="red")
 cancelbtn.grid(row=2, column =0,pady=25, padx=50)
 menuFrame.pack(pady= 150)
 
