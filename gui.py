@@ -71,7 +71,7 @@ def getter():
 menuFrame = CTkFrame(root)
 dropdownHour = CTkOptionMenu(master=menuFrame,values=optionsHour, variable=clickedHour, font=("arial", 20))
 dropdownHour.grid(row=0, column=1, pady=25)
-hourLabel = CTkLabel(menuFrame, text="Hour", font=("arial", 20)).grid(row=0, column=0,sticky="e")
+hourLabel = CTkLabel(menuFrame, text="Hour", font=("arial", 20)).grid(row=0, column=0, sticky="e")
 
 dropdownMinute = CTkOptionMenu(master=menuFrame,values=optionsMinute, variable=clickedMinute, font=("arial", 20))
 dropdownMinute.grid(row=1, column=1)
