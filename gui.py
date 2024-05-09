@@ -77,7 +77,7 @@ dropdownMinute = CTkOptionMenu(master=menuFrame,values=optionsMinute, variable=c
 dropdownMinute.grid(row=1, column=1)
 minuteLabel = CTkLabel(menuFrame, text="Minute", font=("arial", 20)).grid(row=1, column=0,sticky="e")
 
-submitbtn = CTkButton(menuFrame, text="submit", command=getter,font=("arial", 30))
+submitbtn = CTkButton(menuFrame, text="submit", command=getter, font=("arial", 30))
 submitbtn.grid(row=2, column =1, pady=25, padx=50)
 
 cancelbtn = CTkButton(menuFrame, text="cancel", command=cancel, font=("arial", 30),hover_color="red")
