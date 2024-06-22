@@ -66,14 +66,12 @@ clickedMinute = IntVar()
 clickedMinute.set(0)
 
 def submit_func():
-    shutdown = submit(clickedHour.get(), clickedMinute.get())
-    if shutdown > 0:
-        set_brightness(0)
+    shutdown = submit(clickedHour.get(), clickedMinute.get(), 0)
     clickedHour.set(0)
     clickedMinute.set(0)
 def cancel_func():
-    cancel()
-    set_brightness(50)
+    cancel(50)
+
 
 menuFrame = CTkFrame(root)
 dropdownHour = CTkOptionMenu(master=menuFrame,values=optionsHour, variable=clickedHour, font=("arial", 20))
