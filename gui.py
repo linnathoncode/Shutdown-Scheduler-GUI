@@ -4,11 +4,14 @@ from customtkinter import *
 root = CTk()
 
 root.geometry("640x640")
+root.iconbitmap("favicon.ico")
 root.title("Shutdown Scheduler")
 label = CTkLabel(root, text="Shutdown Scheduler", font=("arial", 30))
 label.pack(padx=10, pady=10)
 
-set_appearance_mode("dark")
+#light or dark mode according to the system 
+set_appearance_mode("System")
+set_default_color_theme("red.json")
 
 optionsHour = [
     '0',
