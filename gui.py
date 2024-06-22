@@ -1,17 +1,16 @@
 import tkinter as tk
-from utils import submit, cancel
+from utils import submit, cancel, set_brightness
 from customtkinter import *
 root = CTk()
 
 root.geometry("640x640")
-root.iconbitmap("favicon.ico")
 root.title("Shutdown Scheduler")
 label = CTkLabel(root, text="Shutdown Scheduler", font=("arial", 30))
 label.pack(padx=10, pady=10)
 
 #light or dark mode according to the system 
 set_appearance_mode("System")
-set_default_color_theme("red.json")
+#set_default_color_theme("red.json")
 
 optionsHour = [
     '0',
@@ -66,10 +65,15 @@ clickedHour.set(0)
 clickedMinute = IntVar()
 clickedMinute.set(0)
 
-def getter():
+def submit_func():
     shutdown = submit(clickedHour.get(), clickedMinute.get())
+    if shutdown > 0:
+        set_brightness(0)
     clickedHour.set(0)
     clickedMinute.set(0)
+def cancel_func():
+    cancel()
+    set_brightness(50)
 
 menuFrame = CTkFrame(root)
 dropdownHour = CTkOptionMenu(master=menuFrame,values=optionsHour, variable=clickedHour, font=("arial", 20))
@@ -80,10 +84,10 @@ dropdownMinute = CTkOptionMenu(master=menuFrame,values=optionsMinute, variable=c
 dropdownMinute.grid(row=1, column=1)
 minuteLabel = CTkLabel(menuFrame, text="Minute", font=("arial", 20)).grid(row=1, column=0,sticky="e")
 
-submitbtn = CTkButton(menuFrame, text="submit", command=getter, font=("arial", 30))
+submitbtn = CTkButton(menuFrame, text="submit", command=submit_func, font=("arial", 30))
 submitbtn.grid(row=2, column =1, pady=25, padx=50)
 
-cancelbtn = CTkButton(menuFrame, text="cancel", command=cancel, font=("arial", 30),hover_color="red")
+cancelbtn = CTkButton(menuFrame, text="cancel", command=cancel_func, font=("arial", 30),hover_color="red")
 cancelbtn.grid(row=2, column =0,pady=25, padx=50)
 menuFrame.pack(pady= 150)
 
